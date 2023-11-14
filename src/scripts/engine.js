@@ -75,8 +75,8 @@ async function createCardImage(card, fieldSide) {
   cardImage.classList.add("card");
 
   if (fieldSide === playerSides.player1) {
-    cardImage.addEventListener("click", () => {
-      setCardsField(cardImage.getAttribute("data-id"));
+    cardImage.addEventListener("click", async () => {
+      await setCardsField(cardImage.getAttribute("data-id"));
     });
 
     cardImage.addEventListener("mouseover", async () => {
@@ -85,6 +85,31 @@ async function createCardImage(card, fieldSide) {
   }
 
   return cardImage;
+}
+
+async function setCardsField(cardId) {
+  await removeAllCardsImages();
+  const computerCard = await getRandomCard();
+  const playerCard = cardData[cardId];
+
+  state.fieldCards.player.style.display = "block";
+  state.fieldCards.computer.style.display = "block";
+
+  state.fieldCards.player.src = playerCard.img;
+  state.fieldCards.computer.src = computerCard.img;
+
+  const duelResult = await checkDuelResult(playerCard, computerCard);
+  console.log(duelResult);
+}
+
+// TODO
+async function checkDuelResult(playerCard, computerCard) {
+  return "PLAYER 1 WINS";
+}
+
+// TODO
+async function removeAllCardsImages() {
+  return;
 }
 
 async function drawSelectedCard(cardId) {

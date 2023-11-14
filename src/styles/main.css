@@ -121,3 +121,11 @@
   /* border: 1px solid #fff; */
   border-radius: 8px;
 }
+
+.card {
+  transition: all 0.2s;
+}
+
+.card:hover{
+  transform: scale(1.2);
+}

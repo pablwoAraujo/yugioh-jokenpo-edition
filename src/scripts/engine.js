@@ -78,13 +78,21 @@ async function createCardImage(card, fieldSide) {
     cardImage.addEventListener("click", () => {
       setCardsField(cardImage.getAttribute("data-id"));
     });
+
+    cardImage.addEventListener("mouseover", async () => {
+      await drawSelectedCard(card.id);
+    });
   }
 
-  cardImage.addEventListener("mouseover", () => {
-    drawSelectedCard(card.id);
-  });
-
   return cardImage;
+}
+
+async function drawSelectedCard(cardId) {
+  const selectedCard = cardData[cardId];
+
+  state.cardSprites.avatar.src = selectedCard.img;
+  state.cardSprites.name.innerText = selectedCard.name;
+  state.cardSprites.type.innerText = `Attribute: ${selectedCard.type}`;
 }
 
 async function getRandomCard() {

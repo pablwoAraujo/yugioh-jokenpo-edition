@@ -105,6 +105,16 @@ async function setCardsField(cardId) {
   await drawButton(duelResult);
 }
 
+async function resetDuel() {
+  state.cardSprites.avatar.src = "";
+  state.actions.button.style.display = "none";
+
+  state.fieldCards.player.style.display = "none";
+  state.fieldCards.computer.style.display = "none";
+
+  init();
+}
+
 async function updateScore() {
   state.score.scoreBox.innerText = `Win: ${state.score.playerScore} | Lose: ${state.score.computerScore}`;
 }

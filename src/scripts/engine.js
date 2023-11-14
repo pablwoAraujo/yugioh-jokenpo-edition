@@ -47,6 +47,49 @@ const cardData = [
   },
 ];
 
-function init() {}
+const playerSides = {
+  player1: "player-cards",
+  player2: "computer-cards",
+};
+
+function init() {
+  drawCards(5, playerSides.player1);
+  drawCards(5, playerSides.player2);
+}
+
+async function drawCards(cardsNumber, fieldSide) {
+  for (let i = 0; i < cardsNumber; i++) {
+    const randomCard = await getRandomCard();
+    const cardImage = await createCardImage(randomCard, fieldSide);
+
+    document.getElementById(fieldSide).appendChild(cardImage);
+  }
+}
+
+async function createCardImage(card, fieldSide) {
+  const cardImage = document.createElement("img");
+
+  cardImage.setAttribute("height", "100px");
+  cardImage.setAttribute("src", "./src/assets/icons/card-back.png");
+  cardImage.setAttribute("data-id", card.id);
+  cardImage.classList.add("card");
+
+  if (fieldSide === playerSides.player1) {
+    cardImage.addEventListener("click", () => {
+      setCardsField(cardImage.getAttribute("data-id"));
+    });
+  }
+
+  cardImage.addEventListener("mouseover", () => {
+    drawSelectedCard(card.id);
+  });
+
+  return cardImage;
+}
+
+async function getRandomCard() {
+  const randomIndex = Math.floor(Math.random() * cardData.length);
+  return cardData[randomIndex];
+}
 
 init();

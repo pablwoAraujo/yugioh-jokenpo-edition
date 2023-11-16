@@ -1,3 +1,15 @@
+body {
+  cursor: url("../assets/cursor/yugicursor.png"), default;
+}
+
+button,
+button:hover,
+img:hover,
+a,
+a:hover {
+  cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
+
 .bg-video {
   position: absolute;
   z-index: -2;
@@ -84,7 +96,7 @@
   padding: 0.3rem;
 }
 
-.card-versus__container{
+.card-versus__container {
   display: flex;
   flex-direction: column;
   padding-top: 0.3rem;
@@ -127,6 +139,6 @@
   transition: all 0.2s;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.2);
 }

@@ -2,6 +2,25 @@ body {
   cursor: url("../assets/cursor/yugicursor.png"), default;
 }
 
+#audio-player {
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s;
+
+}
+
+#audio-player:hover {
+  transform: scale(1.2);
+}
+
+.active {
+  opacity: 1;
+}
+
+.inactive {
+  opacity: 0.3;
+}
+
 button,
 button:hover,
 img:hover,
@@ -62,6 +81,9 @@ a:hover {
   padding: 1rem;
   width: 100%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .frame {

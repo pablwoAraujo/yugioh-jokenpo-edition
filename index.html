@@ -26,6 +26,9 @@
 </head>
 
 <body>
+  <audio id="bgm" loop>
+    <source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3" />
+  </audio>
   <div class="bg-video">
     <video class="video" autoplay loop muted>
       <source src="./src/assets/video/yugi.mp4" type="video/mp4">
@@ -34,7 +37,11 @@
   <div class="container">
     <div class="container__left framed-golden-2">
       <div class="score_box frame">
+        <img src="./src/assets/icons/audio.png" id="audio-player" class="inactive">
+
         <span id="score_points">Win: 0 | Lose: 0</span>
+
+        <span></span>
       </div>
       <div class="menu_avatar">
         <img id="card-image">

@@ -1,4 +1,26 @@
+const audioPlayer = document.getElementById("audio-player");
+
+audioPlayer.addEventListener("click", () => {
+  var bgm = document.getElementById("bgm");
+  state.audio.backgroundAudio = !state.audio.backgroundAudio;
+
+  if (state.audio.backgroundAudio) {
+    audioPlayer.classList.add("active");
+    audioPlayer.classList.remove("inactive");
+
+    bgm.play();
+  } else {
+    audioPlayer.classList.add("inactive");
+    audioPlayer.classList.remove("active");
+
+    bgm.pause();
+  }
+});
+
 const state = {
+  audio: {
+    backgroundAudio: false,
+  },
   score: {
     playerScore: 0,
     computerScore: 0,

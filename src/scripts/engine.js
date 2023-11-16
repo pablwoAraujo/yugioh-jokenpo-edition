@@ -54,6 +54,9 @@ const cardData = [
 ];
 
 function init() {
+  state.fieldCards.player.style.display = "none";
+  state.fieldCards.computer.style.display = "none";
+
   drawCards(5, state.playerSides.player1);
   drawCards(5, state.playerSides.player2);
 }
@@ -106,6 +109,10 @@ async function setCardsField(cardId) {
 }
 
 async function resetDuel() {
+  state.cardSprites.name.innerText = "Selecione";
+  state.cardSprites.type.innerText = "uma carta";
+  state.cardSprites.avatar.src = "";
+
   state.cardSprites.avatar.src = "";
   state.actions.button.style.display = "none";
 
@@ -120,23 +127,24 @@ async function updateScore() {
 }
 
 async function drawButton(result) {
-  state.actions.button.innerText = result;
+  state.actions.button.innerText = result.toUpperCase();
   state.actions.button.style.display = "block";
 }
 
 async function checkDuelResult(playerCard, computerCard) {
-  let duelResult = "Empate";
+  let duelResult = "draw";
 
   if (playerCard.winOf.includes(computerCard.id)) {
-    duelResult = "Ganhou";
+    duelResult = "win";
     state.score.playerScore++;
   }
 
   if (playerCard.loseOf.includes(computerCard.id)) {
-    duelResult = "Perdeu";
+    duelResult = "lose";
     state.score.computerScore++;
   }
 
+  await playAudio(duelResult);
   return duelResult;
 }
 
@@ -161,6 +169,11 @@ async function drawSelectedCard(cardId) {
 async function getRandomCard() {
   const randomIndex = Math.floor(Math.random() * cardData.length);
   return cardData[randomIndex];
+}
+
+async function playAudio(status) {
+  const audio = new Audio(`./src/assets/audios/${status}.wav`);
+  audio.play();
 }
 
 init();

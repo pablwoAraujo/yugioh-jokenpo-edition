@@ -11,9 +11,9 @@
 
 ## 📖 Sobre
 
-Projeto desenvolvido durante o Bootcamp [Potência Tech iFood - Desenvolvimento de Jogos](https://web.dio.me/track/potencia-tech-ifood-desenvolvimento-de-jogos) com o professor [Felipe Aguiar](https://github.com/felipeAguiarCode). O objetivo desse projeto é desenvolver um simulador de "Pedra, Papel e Tesoura", inspirado na temática de Yu-Gi-Oh, utilizando apenas HTML, CSS e Javascript.
+Projeto desenvolvido durante o Bootcamp [Potência Tech iFood - Desenvolvimento de Jogos](https://web.dio.me/track/potencia-tech-ifood-desenvolvimento-de-jogos) com o professor [Felipe Aguiar](https://github.com/felipeAguiarCode). O objetivo desse projeto é desenvolver um versão do tracional jogo "Pedra, Papel e Tesoura" com inspiração na temática de Yu-Gi-Oh, utilizando apenas HTML, CSS e Javascript.
 
-O jogo funciona de uma forma simples, escolha a carta que você deseja jogar e tente a sorte. Existem 3 tipos de cartas diferentes:
+O jogo funciona de maneira simples, o jogador seleciona a carta que deseja jogar e tenta a sorte. No jogo, há três tipos distintos de cartas:
 
 <div style="display: flex; gap: 20px;">
   <div style="display: flex; flex-direction: column">
@@ -31,7 +31,7 @@ O jogo funciona de uma forma simples, escolha a carta que você deseja jogar e t
 </div>
 <br/>
 
-Após selecionar uma carta, o computador selecionara a dele. Dependendo das cartas, o resultado será decidido. Lembrando que: Pedra vence Tesoura, Tesoura vence Papel e Papel vence Pedra!
+Após a escolha da carta pelo jogador, o computador faz a sua seleção. O resultado é determinado com base nas interações entre as cartas. É importante lembrar que Pedra vence Tesoura, Tesoura vence Papel e Papel vence Pedra.
 
 ## 🚀 Tecnologias utilizadas
 
